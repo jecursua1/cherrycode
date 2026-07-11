@@ -26,6 +26,21 @@
   --card: rgba(225, 29, 72, 0.03);
 }
 
+/* Logo variant swap — white wordmark on dark theme, black on light theme.
+   Default (no data-theme) is dark, so show the white logo by default. */
+.logo-light {
+  display: none;
+}
+.logo-dark {
+  display: block;
+}
+[data-theme='light'] .logo-light {
+  display: block;
+}
+[data-theme='light'] .logo-dark {
+  display: none;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

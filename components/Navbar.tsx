@@ -2,8 +2,9 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { Menu, X, Moon, Sun, Cherry } from 'lucide-react'
+import { Menu, X, Moon, Sun } from 'lucide-react'
 import { useTheme } from './ThemeProvider'
+import Logo from './Logo'
 
 const links = [
   { label: 'Templates', href: '/templates' },
@@ -33,11 +34,8 @@ export default function Navbar() {
       }}
     >
       <nav className="container-x flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-display text-lg font-extrabold">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-cherry-600 to-cherry-400 text-white">
-            <Cherry size={18} />
-          </span>
-          Cherry<span className="text-gradient">Code</span>
+        <Link href="/" aria-label="CherryCode home" className="flex items-center">
+          <Logo className="h-14" />
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">

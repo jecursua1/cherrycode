@@ -1,16 +1,14 @@
 import Link from 'next/link'
-import { Cherry, Mail, Facebook, Linkedin } from 'lucide-react'
+import { Mail, Facebook, Linkedin } from 'lucide-react'
+import Logo from './Logo'
 
 export default function Footer() {
   return (
     <footer style={{ borderTop: '1px solid var(--border)' }}>
       <div className="container-x grid gap-10 py-14 md:grid-cols-[1.5fr_1fr_1fr]">
         <div>
-          <Link href="/" className="flex items-center gap-2 font-display text-lg font-extrabold">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-cherry-600 to-cherry-400 text-white">
-              <Cherry size={18} />
-            </span>
-            Cherry<span className="text-gradient">Code</span>
+          <Link href="/" aria-label="CherryCode home" className="flex items-center">
+            <Logo className="h-12" />
           </Link>
           <p className="mt-4 max-w-xs text-sm text-secondary">
             Beautiful portfolio websites for virtual assistants and freelancers. Built to help
