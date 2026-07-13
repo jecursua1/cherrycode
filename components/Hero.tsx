@@ -13,6 +13,8 @@ export default function Hero() {
     <section className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
       <div className="grid-glow pointer-events-none absolute inset-0" />
       <div className="dotted-bg pointer-events-none absolute inset-0 opacity-40" />
+      <div className="blob-a" />
+      <div className="blob-b" />
 
       <div className="container-x relative">
         <motion.div
@@ -26,7 +28,7 @@ export default function Hero() {
           </span>
           <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-6xl">
             Get hired with a portfolio that looks{' '}
-            <span className="text-gradient">seriously good.</span>
+            <span className="text-gradient text-gradient-animated">seriously good.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base text-secondary sm:text-lg">
             CherryCode designs and builds fast, beautiful portfolio websites for virtual
@@ -60,11 +62,13 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className={`surface-card overflow-hidden rounded-2xl shadow-xl ${
-                i === 1 ? 'sm:-translate-y-6' : ''
-              }`}
+              className={i === 1 ? 'sm:-translate-y-6' : ''}
             >
-              <Link href={`/templates/${t.slug}`}>
+              <Link
+                href={`/templates/${t.slug}`}
+                className="animate-float hover-lift surface-card block overflow-hidden rounded-2xl shadow-xl"
+                style={{ animationDelay: `${i * 0.8}s` }}
+              >
                 <TemplatePreview template={t} />
                 <div className="flex items-center justify-between px-4 py-3">
                   <span className="text-sm font-semibold">{t.name}</span>

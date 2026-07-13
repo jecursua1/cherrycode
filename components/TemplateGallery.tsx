@@ -55,7 +55,7 @@ export default function TemplateGallery() {
             >
               <Link
                 href={`/templates/${t.slug}`}
-                className="surface-card group block h-full overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="surface-card hover-lift group block h-full overflow-hidden rounded-2xl"
               >
                 <div className="relative">
                   <TemplatePreview template={t} />

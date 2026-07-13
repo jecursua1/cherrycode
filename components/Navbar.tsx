@@ -34,7 +34,11 @@ export default function Navbar() {
       }}
     >
       <nav className="container-x flex h-16 items-center justify-between">
-        <Link href="/" aria-label="CherryCode home" className="flex items-center">
+        <Link
+          href="/"
+          aria-label="CherryCode home"
+          className="flex items-center transition-transform duration-300 hover:scale-105"
+        >
           <Logo className="h-14" />
         </Link>
 

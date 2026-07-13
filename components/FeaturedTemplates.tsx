@@ -33,7 +33,7 @@ export default function FeaturedTemplates() {
             <FadeIn key={t.slug} delay={i * 0.1}>
               <Link
                 href={`/templates/${t.slug}`}
-                className="surface-card group block overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="surface-card hover-lift group block overflow-hidden rounded-2xl"
               >
                 <TemplatePreview template={t} />
                 <div className="p-5">
