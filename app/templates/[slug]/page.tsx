@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeft, ArrowRight, Check, Star } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Check, Star, Eye, ExternalLink } from 'lucide-react'
 import { templates, getTemplate } from '@/lib/templates'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import TemplatePreview from '@/components/TemplatePreview'
+import DesignPreview from '@/components/designs'
 
 export function generateStaticParams() {
   return templates.map((t) => ({ slug: t.slug }))
@@ -53,8 +54,17 @@ export default async function TemplateDetail({
         <section className="py-10">
           <div className="container-x grid gap-10 lg:grid-cols-[1.4fr_1fr]">
             {/* live preview */}
-            <div className="surface-card overflow-hidden rounded-2xl shadow-xl">
-              <TemplatePreview template={template} full />
+            <div>
+              <div className="surface-card max-h-[560px] overflow-y-auto rounded-2xl shadow-xl">
+                <DesignPreview template={template} />
+              </div>
+              <Link
+                href={`/templates/${template.slug}/preview`}
+                className="btn-primary group mt-4 w-full"
+              >
+                <Eye size={16} /> See full preview
+                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
 
             {/* details */}
@@ -71,6 +81,16 @@ export default async function TemplateDetail({
               </div>
               <h1 className="mt-4 font-display text-4xl font-extrabold">{template.name}</h1>
               <p className="mt-3 text-secondary">{template.tagline}</p>
+
+              <a
+                href={template.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-cherry-500 transition-colors hover:text-cherry-400"
+              >
+                View original site
+                <ExternalLink size={13} />
+              </a>
 
               <div className="mt-6 rounded-xl p-4" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
                 <div className="text-xs font-semibold uppercase tracking-wide text-secondary">

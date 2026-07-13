@@ -12,7 +12,7 @@ export default function Logo({ className = 'h-11' }: { className?: string }) {
   return (
     <span className={`inline-flex items-center ${className}`}>
       <Image
-        src="/cherrycode-white-logo.png"
+        src="/cherrycode-white.png"
         alt="CherryCode"
         width={2000}
         height={1112}
@@ -20,7 +20,7 @@ export default function Logo({ className = 'h-11' }: { className?: string }) {
         className="logo-dark h-full w-auto"
       />
       <Image
-        src="/cherrycode-black-logo.png"
+        src="/cherrycode-black.png"
         alt="CherryCode"
         width={2000}
         height={1112}
